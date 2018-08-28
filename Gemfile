@@ -8,6 +8,7 @@ group :test do
   gem 'rake', '~> 10.0'
   gem 'rspec', '~> 3.0'
   gem 'rubocop'
+  gem 'simplecov', require: false
   gem 'webmock'
   gem 'yard'
 end

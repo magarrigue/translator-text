@@ -4,6 +4,13 @@ require 'bundler/setup'
 require 'dotenv'
 Dotenv.load
 
+require 'simplecov'
+
+SimpleCov.start do
+  add_filter ENV['GEM_HOME'] if ENV.fetch('GEM_HOME', '').include?('bundle')
+  add_filter 'spec/support'
+end
+
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
 require 'translator-text'
