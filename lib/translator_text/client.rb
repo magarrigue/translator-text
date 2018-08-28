@@ -25,10 +25,10 @@ module TranslatorText
     # * The entire text included in the request cannot exceed 5,000 characters including spaces.
     # @see https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-translate
     #
-    # @param sentences [Array<String, TranslatorText::Types::Sentence>] the sentences to translate
+    # @param sentences [Array<String, TranslatorText::Types::Sentence>] the sentences to process
     # @param to [Symbol] Specifies the language of the output text (required)
     # @param options [Hash] the optional options to transmit to the service. Consult the API documentation for the exhaustive available options.
-    # @return [Array<TranslatorText::Types::Translation>] the translated sentences
+    # @return [Array<TranslatorText::Types::TranslationResult>] the translation results
     def translate(sentences, to:, **options)
       results = post(
         '/translate',
@@ -36,7 +36,7 @@ module TranslatorText
         query: Hash[to: to, **options]
       )
 
-      results.map { |r| Types::Result.new(r) }
+      results.map { |r| Types::TranslationResult.new(r) }
     end
 
     private

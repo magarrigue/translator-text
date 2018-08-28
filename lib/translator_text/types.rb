@@ -25,4 +25,4 @@ end
 
 require_relative 'types/sentence'
 require_relative 'types/translation'
-require_relative 'types/result'
+require_relative 'types/translation_result'

@@ -42,10 +42,10 @@ results = client.translate(
 
 # Returns
 # [
-#   #<Result detectedLanguage={"language"=>"en", "score"=>1.0} translations=[
+#   #<TranslationResult detectedLanguage={"language"=>"en", "score"=>1.0} translations=[
 #     #<Translation text="Première phrase" to="fr">,
 #     #<Translation text="Primera oración" to="es">]>,
-#   #<Result detectedLanguage={"language"=>"en", "score"=>1.0} translations=[
+#   #<TranslationResult detectedLanguage={"language"=>"en", "score"=>1.0} translations=[
 #     #<Translation text="Deuxième phrase" to="fr">, 
 #     #<Translation text="Segunda oración" to="es">]>
 # ]

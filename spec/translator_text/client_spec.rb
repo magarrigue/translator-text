@@ -75,9 +75,9 @@ describe TranslatorText::Client do
       end
     end
 
-    it 'returns an array of Types::Result' do
+    it 'returns an array of Types::TranslationResult' do
       results.each do |result|
-        expect(result).to be_a(TranslatorText::Types::Result)
+        expect(result).to be_a(TranslatorText::Types::TranslationResult)
       end
     end
 

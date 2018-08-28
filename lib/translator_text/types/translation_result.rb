@@ -1,6 +1,6 @@
 module TranslatorText
   module Types
-    class Result < Dry::Struct
+    class TranslationResult < Dry::Struct
       include Types::JSON
 
       transform_keys(&:to_sym)
