@@ -51,6 +51,27 @@ results = client.translate(
 # ]
 ```
 
+### Detection
+
+```ruby
+require 'translator-text'
+
+api_key = ENV.fetch('COGNITIVE_SUBSCRIPTION_KEY')
+client = TranslatorText::Client.new(api_key)
+
+results = client.detect(['some unknown language', 'quelque chose à détecter'])
+
+# Returns
+# [
+#   #<DetectionResult language=:en score=1.0 isTranslationSupported=true isTransliterationSupported=false alternatives=[
+#     #<Alternative language=:de score=1.0 isTranslationSupported=true isTransliterationSupported=false>,
+#     #<Alternative language=:"fil-PH" score=1.0 isTranslationSupported=true isTransliterationSupported=false>]>,
+#   #<DetectionResult language=:fr score=1.0 isTranslationSupported=true isTransliterationSupported=false alternatives=[
+#     #<Alternative language=:nl score=0.75 isTranslationSupported=true isTransliterationSupported=false>,
+#     #<Alternative language=:vi score=0.75 isTranslationSupported=true isTransliterationSupported=false>]>
+# ]
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -67,4 +88,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Ms::Translator::Text project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/PerfectMemory/translator-text/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the TranslatorText project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/PerfectMemory/translator-text/blob/master/CODE_OF_CONDUCT.md).

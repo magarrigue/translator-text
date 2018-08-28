@@ -39,6 +39,25 @@ module TranslatorText
       results.map { |r| Types::TranslationResult.new(r) }
     end
 
+    # Identifies the language of a piece of text.
+    #
+    # The following limitations apply:
+    # * The array _sentences_ can have at most 100 elements.
+    # * The text value of an array element cannot exceed 10,000 characters including spaces.
+    # * The entire text included in the request cannot exceed 50,000 characters including spaces.
+    # @see https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-detect
+    #
+    # @param sentences [Array<String, TranslatorText::Types::Sentence>] the sentences to process
+    # @return [Array<TranslatorText::Types::DetectionResult>] the detection results
+    def detect(sentences)
+      results = post(
+        '/detect',
+        body: build_sentences(sentences).to_json
+      )
+
+      results.map { |r| Types::DetectionResult.new(r) }
+    end
+
     private
 
     def build_sentences(sentences)

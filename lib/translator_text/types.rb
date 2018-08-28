@@ -5,6 +5,10 @@ module TranslatorText
   module Types
     include Dry::Types.module
 
+    Symbol = Types::Symbol.constructor do |str|
+      str ? str.to_sym : str
+    end
+
     class << self
       def Sentence(item)
         if item.is_a?(Types::Sentence)
@@ -26,3 +30,5 @@ end
 require_relative 'types/sentence'
 require_relative 'types/translation'
 require_relative 'types/translation_result'
+require_relative 'types/alternative'
+require_relative 'types/detection_result'
