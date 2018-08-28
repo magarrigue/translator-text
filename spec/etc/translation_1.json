@@ -1,0 +1,26 @@
+[
+  {
+    "detectedLanguage": {
+      "language": "en",
+      "score": 1.0
+    },
+    "translations": [
+      {
+        "text": "Première phrase",
+        "to": "fr"
+      }
+    ]
+  },
+  {
+    "detectedLanguage": {
+      "language": "en",
+      "score": 1.0
+    },
+    "translations": [
+      {
+        "text": "Deuxième phrase",
+        "to": "fr"
+      }
+    ]
+  }
+]

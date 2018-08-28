@@ -29,4 +29,7 @@ Gem::Specification.new do |spec|
   end
 
   spec.require_paths = ['lib']
+
+  spec.add_dependency 'dry-struct', '~> 0.5.0'
+  spec.add_dependency 'httparty', '~> 0.15'
 end

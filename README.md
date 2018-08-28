@@ -1,6 +1,6 @@
 # TranslatorText
 
-API Wrapper for the Microsoft Translator Text API (Cognitive Services).
+API Wrapper for the [Microsoft Translator Text API 3.0](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-reference) (Cognitive Services).
 
 ## Installation
 
@@ -17,10 +17,39 @@ And then execute:
 Or install it yourself as:
 
     $ gem install translator-text
+    
+## Cognitive Services API Key
+
+* To be able to use the Cognitive Services, you must have an API key and for that you need an Azure account.
+* If you don't have an Azure account, you can create one for free on [this page](https://azure.microsoft.com/en-us/free/). 
+* Once logged on your [Azure portal](https://portal.azure.com/), subscribe to the Translator Text API in Microsoft Cognitive Service.
+* You will find two subscription keys available in 'RESOURCE MANAGEMENT > Keys' ('KEY 1' and 'KEY 2').
 
 ## Usage
 
-TODO: Write usage instructions here
+### Translation
+
+```ruby
+require 'translator-text'
+
+api_key = ENV.fetch('COGNITIVE_SUBSCRIPTION_KEY')
+client = TranslatorText::Client.new(api_key)
+
+results = client.translate(
+	['something to translate', 'another something to translate'],
+	to: [:fr, :es]
+)
+
+# Returns
+# [
+#   #<Result detectedLanguage={"language"=>"en", "score"=>1.0} translations=[
+#     #<Translation text="Première phrase" to="fr">,
+#     #<Translation text="Primera oración" to="es">]>,
+#   #<Result detectedLanguage={"language"=>"en", "score"=>1.0} translations=[
+#     #<Translation text="Deuxième phrase" to="fr">, 
+#     #<Translation text="Segunda oración" to="es">]>
+# ]
+```
 
 ## Development
 
