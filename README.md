@@ -1,5 +1,7 @@
 # TranslatorText
 
+[![Gem](https://img.shields.io/gem/v/translator-text.svg)](https://rubygems.org/gems/translator-text/) [![Code Climate](https://codeclimate.com/github/PerfectMemory/translator-text.png)](https://codeclimate.com/github/PerfectMemory/translator-text)
+
 API Wrapper for the [Microsoft Translator Text API 3.0](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-reference) (Cognitive Services).
 
 ## Installation
